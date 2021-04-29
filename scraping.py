@@ -26,9 +26,6 @@ def scrape_all():
     browser.quit()
     return data
 
-
-
-
 def mars_news(browser):
 
     # Visit the mars nasa news site
