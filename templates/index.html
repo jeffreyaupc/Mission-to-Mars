@@ -16,7 +16,8 @@
       <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <!-- ADDED BTN-INFO CLASS TO CHANGE COLOR OF THE BUTTON FOR DELIVERABLE 3 -->
+        <p><a class="btn btn-primary btn-lg btn-info" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
 
       <!-- Add section for Mars News -->
@@ -34,7 +35,8 @@
 
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
-        <div class="col-md-8">
+        <!-- ADDED BOOTSTRAP ELEMENT TO MAKE 4 IMAGES IN A ROW FOR DELIVERABLE 3 -->
+        <div class="col-xs-12 col-md-8">
           <h2>Featured Mars Image</h2>
 
           <!-- if images is False/None/non-existent, then default to error message -->
@@ -48,8 +50,11 @@
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
-            {{ mars.facts | safe }}
+            <!-- MADE H3 TEXT UNDERLINED AND ADDED A DIV TO MAKE TEXT CENTERED FOR DELIVERABLE 3 -->
+            <h3><u>Mars Facts</u></h3>
+            <div class="text-center">
+              {{ mars.facts | safe }}
+            </div>
           </div>
         </div>
       </div>
@@ -59,9 +64,8 @@
         <div class="page-header">
           <h2 class="text-center">Mars Hemispheres</h2>
         </div>
-
         {% for hemisphere in mars.hemispheres %}
-        <div class="col-md-6">
+        <div class="col-sm-6 col-lg-3">
           <div class="thumbnail">
             <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
             <div class="caption">
